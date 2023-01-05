@@ -69,7 +69,9 @@ class Safe(Tk.Tk):
       
       if (getValue != 0):
         self.money = moneyBefore
-        print('V trezoru nemáte dostatek správných mincí pro tento výběr')
+        for child in self.fm_showMoney.winfo_children():
+          child.destroy()
+        Tk.Label(self.fm_showMoney, text='V trezoru není dostatek mincí').pack()
       else:
         self.uploadMoney()
         for child in self.fm_showMoney.winfo_children():
