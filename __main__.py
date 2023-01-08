@@ -1,5 +1,6 @@
 from safe import Safe
 
+
 def main():
     app = Safe(fileName='umbilikus.txt')
     app.mainloop()
